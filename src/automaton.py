@@ -79,15 +79,37 @@ class Automaton:
         return current_state in self.accepted_states
 
 
-if __name__ == "__main__":
+def zero_before_one():
+    """
+    alle A's müssen vor B's sein
+    :return:
+    """
+
     automaton = Automaton(
-        alphabet="HelloWorld",
-        number_of_states=10,
-        initial_state=2,
+        alphabet="AB",
+        number_of_states=3,
+        initial_state=0,
+        accepted_states={0, 1},
         transition_table={
-            1: {"H": 3, "e": 9},
-            3: {"l": 4}
+            0: {"B": 1},
+            1: {"A": 2},
+            2: {"A": 2, "B": 2}
         }
     )
 
     print(automaton)
+
+    test_cases = (
+        "",
+        "AAAAAAAAAA",
+        "BBBBBBBBBB",
+        "AAABBBAAAA",
+        "BBBBBAAAAA",
+    )
+
+    for test_case in test_cases:
+        print(test_case.ljust(15), automaton.run(test_case))
+
+
+if __name__ == "__main__":
+    zero_before_one()
