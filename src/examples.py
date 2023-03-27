@@ -66,5 +66,4 @@ def contains_the_word():
 
 
 if __name__ == "__main__":
-    # zero_before_one()
     contains_the_word()
