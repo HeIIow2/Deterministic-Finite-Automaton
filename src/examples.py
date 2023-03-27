@@ -8,7 +8,7 @@ def test(test_cases: tuple, automaton: Automaton):
         print(test_case.ljust(15), automaton.run(test_case))
 
 
-def zero_before_one():
+def a_before_b():
     """
     alle A's müssen vor B's sein
     :return:
