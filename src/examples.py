@@ -15,7 +15,7 @@ def a_before_b():
     """
 
     automaton = Automaton(
-        alphabet="AB",
+        alphabet="ABC",
         number_of_states=3,
         initial_state=0,
         accepted_states={0, 1},
@@ -30,6 +30,7 @@ def a_before_b():
         "",
         "AAAAAAAAAA",
         "BBBBBBBBBB",
+        "AAAAAABBBB",
         "AAABBBAAAA",
         "BBBBBAAAAA",
     ), automaton)
@@ -62,8 +63,11 @@ def get_automaton_contains_the_word(word: str) -> Automaton:
 
 def contains_the_word():
     print("helloworld")
-    test(("helloworld", "helloworldhldl", "hellloworldhldl"), get_automaton_contains_the_word("helloworld"))
+    test(("hhelloworld", "helloworld", "helloworldhldl", "hellloworldhldl"), get_automaton_contains_the_word("helloworld"))
 
+def contains_abba():
+    print("ABBA")
+    test(("ABBA", "AABBAA", "ABAB", "ABBABBA", "ABABBA"), get_automaton_contains_the_word("ABBA"))
 
 if __name__ == "__main__":
-    contains_the_word()
+    contains_abba()
